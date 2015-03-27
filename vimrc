@@ -70,30 +70,8 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 
 " =========== Plugin settings ============== {{{
 "
-"  Installed plugins:
-"  vim airline         fancy statusline
-"  surround            handling enclosing quotes/brackets
-"  numbers toggle      toggle between relative and absolute numbering
-"  tcomment            toggle commenting on code chunks
-"  luna                colorscheme
-"  snipmate            auto codesnippets
-"  skeleton            creates code 'skeletons' based on file extention.
-"  vim-togglemouse     F12 to toggle mouse support
-"  vim-slime           Grab some text and send it to a tmux session.
-"                       Found at https://github.com/jpalardy/vim-slime
-"  tlib-vim            Utility functions. I forget what pluggin needed it.
-"  supertab            Autocompletion with tab.
-"  vim-snippets        Code snippets for snipmate.
-"  addon-mw-utils      Another utility pluggin that I forgot what requires it.
-"  SingleCompile       Compile and run source code.
-"  tabular             For aligning text
-"  ctrlp 	       opening files
-"  ctrl-space          window/buffer/session management
-"  syntastic 	       syntax checker
 
-
-"Enable Pathogen
-" call pathogen#infect()
+"Vundle initialization{{{
 call vundle#begin()
 Plugin 'gmark/Vundle.vim'
 Plugin 'bling/vim-airline'
@@ -113,22 +91,14 @@ Plugin 'mhinz/vim-signify'
 Plugin 'bling/vim-bufferline'
 "Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
+"}}}
 
-
-" turn on vim powerline
+" turn on vim airline
 set laststatus=2
-"let g:powerline_pycmd='py3'
-" if ! has('gui_running')
-"     set ttimeoutlen=10
-"     augroup FastEscape
-"         autocmd!
-"             au InsertEnter * set timeoutlen=0
-"             au InsertLeave * set timeoutlen=2000
-"     augroup END
-" endif
 let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
 let g:airline#extensions#tmuxline#enabled = 0
+let g:airline#extensions#bufferline#enabled = 0
 " Hide vim's default mode indicator
 set noshowmode
 
