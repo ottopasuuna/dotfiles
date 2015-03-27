@@ -105,11 +105,12 @@ Plugin 'jpalardy/vim-slime'
 Plugin 'tpope/vim-surround'
 Plugin 'SingleCompile'
 Plugin 'majutsushi/tagbar'
-Plugin 'techlivezheng/vim-plugin-minibufexpl'
+"Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'mhinz/vim-signify'
+Plugin 'bling/vim-bufferline'
 "Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
