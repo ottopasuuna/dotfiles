@@ -90,6 +90,8 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'mhinz/vim-signify'
 Plugin 'bling/vim-bufferline'
 "Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete.vim'
+
 call vundle#end()
 "}}}
 
@@ -126,6 +128,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 "}}}
 
