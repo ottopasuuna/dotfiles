@@ -77,7 +77,7 @@ call vundle#begin()
 Plugin 'gmark/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'jpalardy/vim-slime'
@@ -127,8 +127,8 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 "neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -141,6 +141,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 "Make it so we don't have to press shift when entering command mode
 nnoremap ; :
+vnoremap ; :
 
 inoremap jk <ESC>
 
@@ -186,6 +187,9 @@ let g:better_whitespace_filetypes_blacklist=['txt']
 
 :nnoremap <leader>. A.<esc>0
 :inoremap <c-c> <esc>g~iwea
+
+"abbreviations (auto insert/correct text)
+iabbrev tehn then
 
 "}}}
 
