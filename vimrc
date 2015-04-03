@@ -140,6 +140,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 "Make it so we don't have to press shift when entering command mode
 nnoremap ; :
+vnoremap ; :
 
 inoremap jk <ESC>
 
@@ -185,6 +186,9 @@ let g:better_whitespace_filetypes_blacklist=['txt']
 
 :nnoremap <leader>. A.<esc>0
 :inoremap <c-c> <esc>g~iwea
+
+"abbreviations (auto insert/correct text)
+iabbrev tehn then
 
 "}}}
 
