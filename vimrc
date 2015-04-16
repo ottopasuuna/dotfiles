@@ -77,7 +77,7 @@ call vundle#begin()
 Plugin 'gmark/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'jpalardy/vim-slime'
