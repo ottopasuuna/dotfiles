@@ -49,13 +49,15 @@ set list lcs=tab:»·,eol:¬
 
 "Tab settings
 set shiftwidth=4
-"set expandtab
-"set softtabstop=4
+set expandtab
+set softtabstop=4
 set autoindent
 
 "Highlight search items
 " set hlsearch
 set incsearch
+
+set completeopt-=preview
 
 "Create code folds via '{{{ <code> }}}'
 " zo   open fold
@@ -79,18 +81,17 @@ Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'sjl/gundo.vim'
+"Plugin 'sjl/gundo.vim'
 Plugin 'jpalardy/vim-slime'
 Plugin 'tpope/vim-surround'
 Plugin 'SingleCompile'
-Plugin 'majutsushi/tagbar'
+"Plugin 'majutsushi/tagbar'
 "Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'mhinz/vim-signify'
 Plugin 'bling/vim-bufferline'
-"Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/neocomplete.vim'
 
 call vundle#end()
@@ -127,12 +128,13 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
 
 "neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#max_list = 25
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 "}}}
@@ -190,6 +192,8 @@ let g:better_whitespace_filetypes_blacklist=['txt']
 
 "abbreviations (auto insert/correct text)
 iabbrev tehn then
+iabbrev incldue include
+iabbrev enld endl
 
 "}}}
 
