@@ -63,6 +63,13 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # bindkey '^T' autosuggest-toggle
 
 # User configuration
+function search() {
+    aura -Ss $@; aura -As $@
+}
+
+function install() {
+    sudo aura -S $@ || sudo aura -A $@
+}
 
 alias la="ls -a"
 alias archey="archey3"
@@ -70,10 +77,11 @@ alias t="task"
 alias ta="task add"
 alias yt="youtube-viewer -C"
 alias sleep="systemctl suspend"
-alias update="yaourt -Syua --noconfirm"
-alias install="yaourt -Sa"
+#alias update="yaourt -Syua --noconfirm"
+#alias install="yaourt -Sa"
 alias music="ncmpcpp"
 alias vimrc="vim ~/.vimrc"
+alias zshrc="vim ~/.zshrc"
 alias g++="g++ -Wall -pedantic"
 alias pvsim="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/PVSim/PVSim.exe"
 alias vi="vim"

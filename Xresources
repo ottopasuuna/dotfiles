@@ -19,9 +19,9 @@ URxvt.tabbed.autohide: true
 !URxvt.foreground:        #e5e5e5
 URxvt.cursorColor:       #f0f0f0
 Urxvt.colorUL:           #4682b4
-
 URxvt*iso14755: false
 URxvt*iso14755_52: false
+
 
 ! --- standard colors ---
 ! special
