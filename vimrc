@@ -49,7 +49,7 @@ set list lcs=tab:»·,eol:¬
 
 "Tab settings
 set shiftwidth=4
-set expandtab
+"set expandtab
 set softtabstop=4
 set autoindent
 
@@ -79,7 +79,7 @@ call vundle#begin()
 Plugin 'gmark/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'edkolev/tmuxline.vim'
 "Plugin 'sjl/gundo.vim'
 Plugin 'jpalardy/vim-slime'
@@ -157,11 +157,20 @@ inoremap jk <ESC>
 "space in normal mode toggles folding
 nnoremap <space> za
 
+"switch to indent folding
+nnoremap <leader>fi :set foldmethod=indent<CR>
+"switch to marker folding
+nnoremap <leader>fm :set foldmethod=marker<CR>
+
 "insert computer science header
 :nnoremap <leader>h :call CS_header()<CR>
 
 "edit a file in new tab
 :nnoremap <leader>t :tabe
+
+"switch between buffers
+:nnoremap <leader>p :bp<CR>
+:nnoremap <leader>n :bn<CR>
 
 "Move line up or down
 nnoremap - ddp

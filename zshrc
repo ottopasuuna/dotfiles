@@ -68,7 +68,7 @@ function search() {
 }
 
 function install() {
-    sudo aura -S $@ || sudo aura -A $@
+    sudo aura -S $@ || sudo aura -Aa --hotedit $@
 }
 
 alias la="ls -a"
