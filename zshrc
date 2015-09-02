@@ -20,15 +20,6 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to disable command auto-correction.
-# DISABLE_CORRECTION="true"
-
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 
@@ -72,13 +63,13 @@ function install() {
 }
 
 alias la="ls -a"
+alias sl="ls"
 alias archey="archey3"
 alias t="task"
 alias ta="task add"
+alias tw="vim +TW"
 alias yt="youtube-viewer -C"
 alias sleep="systemctl suspend"
-#alias update="yaourt -Syua --noconfirm"
-#alias install="yaourt -Sa"
 alias music="ncmpcpp"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"

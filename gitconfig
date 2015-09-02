@@ -1,3 +1,5 @@
 [user]
 	name = Carl Hofmeister
 	email = hofmeister.carl@gmail.com
+[push]
+	default = simple

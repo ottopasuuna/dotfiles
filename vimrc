@@ -93,6 +93,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'mhinz/vim-signify'
 Plugin 'bling/vim-bufferline'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'farseer90718/vim-taskwarrior'
 
 call vundle#end()
 "}}}
@@ -130,6 +131,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+
+let g:task_rc_override = 'rc.defaultwidth=0'
 
 "neocomplete
 let g:neocomplete#enable_at_startup = 1
