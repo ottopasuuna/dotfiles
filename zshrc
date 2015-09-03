@@ -62,6 +62,10 @@ function install() {
     sudo aura -S $@ || sudo aura -Aa --hotedit $@
 }
 
+function tp() {
+    task --project=$@
+}
+
 alias la="ls -a"
 alias sl="ls"
 alias archey="archey3"
