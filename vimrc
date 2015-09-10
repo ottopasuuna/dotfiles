@@ -26,7 +26,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 "allow plugins to read filetypes
 filetype plugin indent on
-filetype off
+" filetype off
 
 "Allow mouse support
 set mouse=a
@@ -48,9 +48,10 @@ set number
 set list lcs=tab:»·,eol:¬
 
 "Tab settings
+
 set shiftwidth=4
 "set expandtab
-"set softtabstop=4
+set softtabstop=4
 set autoindent
 
 "Highlight search items
@@ -79,7 +80,9 @@ call vundle#begin()
 Plugin 'gmark/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
+
+
 Plugin 'edkolev/tmuxline.vim'
 "Plugin 'sjl/gundo.vim'
 Plugin 'jpalardy/vim-slime'
@@ -94,6 +97,7 @@ Plugin 'mhinz/vim-signify'
 Plugin 'bling/vim-bufferline'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'farseer90718/vim-taskwarrior'
+Plugin 'vimwiki/vimwiki'
 
 call vundle#end()
 "}}}
@@ -131,6 +135,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
+
+let g:syntastic_mode_map = {"mode": "passive"} "need to manually SyntasticCheck()
 
 let g:task_rc_override = 'rc.defaultwidth=0'
 
@@ -150,12 +158,16 @@ vnoremap ; :
 
 inoremap jk <ESC>
 
+"quit vim
+:nnoremap <leader><leader> :wq<CR>
+
 "Saving keybinds
 :nnoremap <C-s> :w<CR>
 :inoremap <C-s> <ESC>:w<CR>a
 
-:nnoremap <C-q> :wq<CR>
-:inoremap <C-q> <ESC>:wq<CR>
+" My tmux prefix is now C-q
+" :nnoremap <C-q> :wq<CR>
+" :inoremap <C-q> <ESC>:wq<CR>
 
 "space in normal mode toggles folding
 nnoremap <space> za
@@ -169,11 +181,13 @@ nnoremap <leader>fm :set foldmethod=marker<CR>
 :nnoremap <leader>h :call CS_header()<CR>
 
 "edit a file in new tab
-:nnoremap <leader>t :tabe
+:nnoremap <C-t> :tabe 
 
 "switch between buffers
-:nnoremap <leader>p :bp<CR>
-:nnoremap <leader>n :bn<CR>
+:nnoremap <leader>n :bp<CR>
+:nnoremap <leader>m :bn<CR>
+"close buffer
+:nnoremap <leader>q :bd<CR>
 
 "Move line up or down
 nnoremap - ddp
@@ -186,9 +200,11 @@ nnoremap <CR> o<Esc>
 nnoremap <leader>ev :tabe $MYVIMRC<cr>
 
 nnoremap <F1> :SCCompile<cr>
-nnoremap <F2> :SCCompileRun<cr>
+nnoremap <F2> :SCCompileRun<cr>.
 nnoremap <F5> :GundoToggle<CR>
 nnoremap <F8> :TagbarToggle<cr>
+
+nnoremap <leader>sc :SyntasticCheck<CR>
 
 "better-whitespace plugin:
 :nnoremap <leader>w :ToggleWhitespace<cr>
@@ -199,7 +215,9 @@ let g:better_whitespace_filetypes_blacklist=['txt']
 "toggle case of current word in insert
 ":inoremap <c-u> <esc>g~iwea
 
+"append a period to the end of a line.
 :nnoremap <leader>. A.<esc>0
+"Capitalize current word in insert mode.
 :inoremap <c-c> <esc>g~iwea
 
 "abbreviations (auto insert/correct text)

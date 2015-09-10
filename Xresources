@@ -9,8 +9,8 @@ URxvt.urlLauncher:/usr/bin/firefox-nightly -new-tab
 URvxt.matcher.button: 1
 
 !Clipboard
-URxvt.keysym.C-x: perl:clipboard:copy
-URxvt.keysym.C-v: perl:clipboard:paste
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
 
 !Tabs
 URxvt.tabbed.autohide: true
