@@ -39,7 +39,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git, sudo, compleat, colored-man web-search)
+plugins=(fasd sudo extract colored-man web-search)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -66,6 +66,14 @@ function tp() {
     task --project=$@
 }
 
+function trash() {
+    if [[ !( -d "~/.Trash") ]]
+    then
+	mkdir ~/.Trash
+    fi
+    mv $@ ~/.Trash
+}
+
 alias la="ls -a"
 alias sl="ls"
 alias archey="archey3"
@@ -89,16 +97,9 @@ export KSP=~/.steam/steam/SteamApps/common/Kerbal\ Space\ Program/
 export QT_STYLE_OVERRIDE=gtk
 export LS_COLORS="di=00;34"
 
-#Enable fasd
-eval "$(fasd --init posix-alias zsh-hook)"
-
 #Dissable flow control so we can use crtl q/s
 stty -ixon -ixoff
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
