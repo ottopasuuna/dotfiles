@@ -49,9 +49,10 @@ set list lcs=tab:»·,eol:¬
 
 "Tab settings
 
-set shiftwidth=4
-"set expandtab
-set softtabstop=4
+set shiftwidth=3
+set tabstop=3
+set expandtab
+set softtabstop=3
 set autoindent
 
 "Highlight search items
@@ -180,7 +181,7 @@ nnoremap <leader>fm :set foldmethod=marker<CR>
 "insert computer science header
 :nnoremap <leader>h :call CS_header()<CR>
 
-"edit a file in new tab
+"edit a file in new tab INTENTIONAL WHITESPACE
 :nnoremap <C-t> :tabe 
 
 "switch between buffers
@@ -197,6 +198,7 @@ nnoremap _ ddkP
 "nnoremap <S-CR> O<Esc> Doesn't work....
 nnoremap <CR> o<Esc>
 
+"Edit vimrc in new tab
 nnoremap <leader>ev :tabe $MYVIMRC<cr>
 
 nnoremap <F1> :SCCompile<cr>
@@ -211,6 +213,11 @@ nnoremap <leader>sc :SyntasticCheck<CR>
 :nnoremap <leader>sw :StripWhitespace<cr>
 let g:better_whitespace_filetypes_blacklist=['txt']
 
+"Search for visually selected text
+vnoremap // y/<C-R>"<CR>
+
+"Java print hotkey
+inoremap <C-p> System.out.println(
 
 "toggle case of current word in insert
 ":inoremap <c-u> <esc>g~iwea
@@ -224,6 +231,7 @@ let g:better_whitespace_filetypes_blacklist=['txt']
 iabbrev tehn then
 iabbrev incldue include
 iabbrev enld endl
+iabbrev teh the
 
 "}}}
 
@@ -236,10 +244,8 @@ function! CS_header()
     put ='    Carl Hofmeister'
     put ='    11162955' "Student number
     put ='    clh104' "NSID
-    put ='    Lecture Sec. 02B'
-    put ='    Lab Sec. L02'
     put ='*/'
-    :normal 7kdd7jp
+    :normal 5kdd5jp
 endfunction
 
 "}}}
