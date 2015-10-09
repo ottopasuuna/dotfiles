@@ -1,6 +1,4 @@
 "===========================================
-"
-"
 "               Carl's .vimrc
 "===========================================
 
@@ -85,11 +83,9 @@ Plugin 'scrooloose/syntastic'
 
 
 Plugin 'edkolev/tmuxline.vim'
-"Plugin 'sjl/gundo.vim'
 Plugin 'jpalardy/vim-slime'
 Plugin 'tpope/vim-surround'
 Plugin 'SingleCompile'
-"Plugin 'majutsushi/tagbar'
 "Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
@@ -97,8 +93,6 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'mhinz/vim-signify'
 Plugin 'bling/vim-bufferline'
 Plugin 'Shougo/neocomplete.vim'
-Plugin 'farseer90718/vim-taskwarrior'
-Plugin 'vimwiki/vimwiki'
 
 call vundle#end()
 "}}}
