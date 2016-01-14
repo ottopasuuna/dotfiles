@@ -81,7 +81,7 @@ Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 
-
+Plugin 'vim-scripts/TaskList.vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'jpalardy/vim-slime'
 Plugin 'tpope/vim-surround'
