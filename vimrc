@@ -80,19 +80,24 @@ Plugin 'gmark/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'benekastah/neomake'
 
 Plugin 'vim-scripts/TaskList.vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'jpalardy/vim-slime'
 Plugin 'tpope/vim-surround'
 Plugin 'SingleCompile'
-"Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'mhinz/vim-signify'
 Plugin 'bling/vim-bufferline'
-Plugin 'Shougo/neocomplete.vim'
+if !has('nvim')
+   Plugin 'Shougo/neocomplete.vim'
+else
+   Plugin 'Shougo/deoplete.nvim'
+   let g:deoplete#enable_at_startup = 1
+endif
 
 call vundle#end()
 "}}}
@@ -136,6 +141,20 @@ let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_mode_map = {"mode": "passive"} "need to manually SyntasticCheck()
 
 let g:task_rc_override = 'rc.defaultwidth=0'
+
+"Neomake
+" let g:neomake_c_gcc_maker = {
+"    \ 'args': ['-Wall'],
+"    \}
+" let g:neomake_c_enabled_markers = ['gcc']
+let g:neomake_warning_sign = {
+   \ 'text': 'W',
+   \ 'texthl': 'WarningMsg',
+   \ }
+let g:neomake_error_sign = {
+   \ 'text': '✗',
+   \ 'texthl': 'ErrorMsg',
+   \ }
 
 "neocomplete
 let g:neocomplete#enable_at_startup = 1
