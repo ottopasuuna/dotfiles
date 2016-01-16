@@ -20,8 +20,6 @@ set enc=utf8
 "Automatically load vimrc after saving
 autocmd! bufwritepost ~/.vimrc source %
 
-set rtp+=~/.vim/bundle/Vundle.vim
-
 "allow plugins to read filetypes
 filetype plugin indent on
 " filetype off
@@ -74,32 +72,31 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 " =========== Plugin settings ============== {{{
 "
 
-"Vundle initialization{{{
-call vundle#begin()
-Plugin 'gmark/Vundle.vim'
-Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'benekastah/neomake'
+"vim-plug initialization{{{
+call plug#begin()
+Plug 'bling/vim-airline'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake', {'on': 'Neomake'}
 
-Plugin 'vim-scripts/TaskList.vim'
-Plugin 'edkolev/tmuxline.vim'
-Plugin 'jpalardy/vim-slime'
-Plugin 'tpope/vim-surround'
-Plugin 'SingleCompile'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'mhinz/vim-signify'
-Plugin 'bling/vim-bufferline'
+Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}
+Plug 'edkolev/tmuxline.vim'
+Plug 'jpalardy/vim-slime'
+Plug 'tpope/vim-surround'
+Plug 'SingleCompile'
+Plug 'tomtom/tcomment_vim'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'mhinz/vim-signify'
+Plug 'bling/vim-bufferline'
 if !has('nvim')
-   Plugin 'Shougo/neocomplete.vim'
+   Plug 'Shougo/neocomplete.vim'
 else
-   Plugin 'Shougo/deoplete.nvim'
+   Plug 'Shougo/deoplete.nvim'
    let g:deoplete#enable_at_startup = 1
 endif
 
-call vundle#end()
+call plug#end()
 "}}}
 
 " turn on vim airline
