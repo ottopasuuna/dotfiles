@@ -1,0 +1,19 @@
+"3.10.1 (created: 2015/08/25 00:41:59)
+
+highlight Hint font-family: monospace; font-size: 11px; font-weight: bold; text-transform: uppercase; color: black; background-color: orange; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px; 
+nnoremap d <C-d>
+nnoremap X u
+nnoremap u <C-u>
+nnoremap J gt
+nnoremap K gT
+nnoremap <C-j> tabm<Space>+1
+nnoremap <C-S-J> :tabm<Space>+1<Return>
+nnoremap <C-S-K> :tabm<Space>-1<Return>
+nnoremap x D
+noremap j 3j
+noremap k 3k
+set "editor=urxvtc -e vim"
+set hintchars=asdfjklrtyunv
+source! /home/carl/.vimperatorrc.local
+
+" vim: set ft=vimperator:
