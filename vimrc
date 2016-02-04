@@ -78,12 +78,11 @@ Plug 'bling/vim-airline'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
 Plug 'benekastah/neomake', {'on': 'Neomake'}
-
+Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}
 Plug 'edkolev/tmuxline.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-surround'
-Plug 'SingleCompile'
 Plug 'tomtom/tcomment_vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'ntpeters/vim-better-whitespace'
@@ -176,10 +175,6 @@ inoremap jk <ESC>
 :nnoremap <C-s> :w<CR>
 :inoremap <C-s> <ESC>:w<CR>a
 
-" My tmux prefix is now C-q
-" :nnoremap <C-q> :wq<CR>
-" :inoremap <C-q> <ESC>:wq<CR>
-
 "space in normal mode toggles folding
 nnoremap <space> za
 
@@ -203,6 +198,13 @@ nnoremap <leader>fm :set foldmethod=marker<CR>
 "Move line up or down
 nnoremap - ddp
 nnoremap _ ddkP
+
+"Join line above (like J)
+nnoremap K ddkPJ
+
+"Move to begining and end of line
+nnoremap H ^
+nnoremap L $
 
 "Insert newlines without leaving normal mode
 "nnoremap <S-CR> O<Esc> Doesn't work....
