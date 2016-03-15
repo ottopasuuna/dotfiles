@@ -1,0 +1,14 @@
+#!/bin/bash
+#count down timer
+# takes in one argument which is the number of minutes to count down from
+
+for ((i=$1*60;i>=0;i--)) do
+   case $(ps -o stat= -p $$) in
+      #if this is in the forground, display time
+      *+*) echo -ne "\r$(date -d"0+$i sec" +%H:%M:%S)";
+   esac
+   sleep 1;
+done
+notify-send -u critical " $1 minute timer finished " "
+$2
+"

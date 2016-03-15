@@ -77,6 +77,7 @@ call plug#begin()
 Plug 'bling/vim-airline'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree'
 Plug 'benekastah/neomake', {'on': 'Neomake'}
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}
@@ -195,12 +196,21 @@ nnoremap <leader>fm :set foldmethod=marker<CR>
 "close buffer
 :nnoremap <leader>q :bd<CR>
 
+"move beween windows
+:nnoremap <C-k> <C-w>k
+:nnoremap <C-j> <C-w>j
+:nnoremap <C-h> <C-w>h " doesn't work in neovim
+:nnoremap <C-l> <C-w>l
+
 "Move line up or down
 nnoremap - ddp
 nnoremap _ ddkP
 
 "Join line above (like J)
 nnoremap K ddkPJ
+
+"change function parameter
+nnoremap cp ct,
 
 "Move to begining and end of line
 nnoremap H ^
@@ -215,9 +225,10 @@ nnoremap <leader>ev :tabe $MYVIMRC<cr>
 
 nnoremap <F1> :SCCompile<cr>
 nnoremap <F2> :SCCompileRun<cr>.
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <F5> :NERDTreeToggle<CR>
 nnoremap <F8> :TagbarToggle<cr>
 
+"syntax checking
 nnoremap <leader>sc :SyntasticCheck<CR>
 
 "better-whitespace plugin:
@@ -230,9 +241,6 @@ vnoremap // y/<C-R>"<CR>
 
 "Java print hotkey
 inoremap <C-p> System.out.println(
-
-"toggle case of current word in insert
-":inoremap <c-u> <esc>g~iwea
 
 "append a period to the end of a line.
 :nnoremap <leader>. A.<esc>0
