@@ -24,6 +24,8 @@ autocmd! bufwritepost ~/.vimrc source %
 filetype plugin indent on
 " filetype off
 
+au FileType txt set tw=80 spell
+
 "Allow mouse support
 set mouse=a
 
@@ -230,6 +232,9 @@ nnoremap <F8> :TagbarToggle<cr>
 
 "syntax checking
 nnoremap <leader>sc :SyntasticCheck<CR>
+
+"Toggle spelling
+nnoremap <leader>sp :set spell!<CR>
 
 "better-whitespace plugin:
 :nnoremap <leader>w :ToggleWhitespace<cr>
