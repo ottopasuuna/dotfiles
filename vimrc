@@ -263,7 +263,7 @@ iabbrev teh the
 " =============== Functions ================ {{{
 
 "puts my header I need to include for school assignments. (confidential info
-"removed).
+"removed) (oops, nevermind, I forgot to remove my info for many commits...).
 function! CS_header()
     put ='/*'
     put ='    Carl Hofmeister'

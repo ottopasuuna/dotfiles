@@ -84,11 +84,11 @@ alias tw="vim +TW"
 alias yt="youtube-viewer -C"
 alias suspend="systemctl suspend"
 alias music="ncmpcpp"
-alias vimrc="vim ~/.vimrc"
-alias zshrc="vim ~/.zshrc"
+alias vimrc="nvim ~/.vimrc"
+alias zshrc="nvim ~/.zshrc"
 alias g++="g++ -Wall -pedantic"
 alias pvsim="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/PVSim/PVSim.exe"
-alias vi="vim"
+alias vi="nvim"
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH:
 export LFS=/mnt/lfs
