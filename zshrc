@@ -66,10 +66,10 @@ function tp() {
     task --project=$@
 }
 
-function trash() {
-    if [[ !( -d "~/.Trash") ]]
+function mr() {
+    if [[ ! -d ~/.Trash ]]
     then
-	mkdir ~/.Trash
+       mkdir ~/.Trash
     fi
     mv $@ ~/.Trash
 }

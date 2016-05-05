@@ -86,6 +86,7 @@ Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}
 Plug 'edkolev/tmuxline.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'ntpeters/vim-better-whitespace'
@@ -111,7 +112,7 @@ let g:airline#extensions#bufferline#enabled = 0
 set noshowmode
 
 "syntax highlighting (added here to allow for
-" pathogeten to install colorschemes)
+" plugin manager to install colorschemes)
 syntax on
 " colorscheme luna-term
 colorscheme Tomorrow-Night-Eighties
