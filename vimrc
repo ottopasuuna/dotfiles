@@ -49,7 +49,8 @@ set list lcs=tab:»·,eol:¬
 
 set shiftwidth=3
 set tabstop=3
-set expandtab
+" set expandtab
+set noexpandtab
 set softtabstop=3
 set autoindent
 
@@ -77,6 +78,7 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 "vim-plug initialization{{{
 call plug#begin()
 Plug 'bling/vim-airline'
+Plug '4Evergreen4/vim-hardy'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
