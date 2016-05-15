@@ -1,0 +1,49 @@
+[options]
+allow_bold = true
+cursor_shape = block
+dynamic_title = true
+font = DejaVuSansMonoForPowerline 13
+browser = firefox
+fullsreen = false
+mouse_autohide = true
+clickable_url = true
+cursor_blink = system
+
+[colors]
+
+foreground = #e5e5e5
+background = #303030
+cursor = #e5e5e5
+
+#black
+color0 = #000000
+color8 = #272727
+
+#red
+color1 = #c52f2f
+color9 = #ff1616
+
+#green
+color2 = #bada55
+color10 = #34d913
+
+#yellow
+color3 = #efde43
+color11 = #f6ff04
+
+#blue
+color4 = #60cdff
+color12 = #0f7fff
+
+#magenta
+color5 = #d7b2fd
+color13 = #fd50da
+
+#cyan
+color6 = #00ccff
+color14 = #02f2d0
+
+#white
+color7 = #eae5d6
+color15 = #ffffff
+

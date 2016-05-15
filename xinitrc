@@ -6,11 +6,13 @@ xhost +local:
 setxkbmap -option ctrl:nocaps
 xrdb -merge ~/.Xresources
 
-urxvtd -q -f -o
+# urxvtd -q -f -o
 
 redshift &
 #nvidia-settings --load-config-only
 # compton &
 xscreensaver &
+owncloud &
+mpd &
 
 exec awesome
