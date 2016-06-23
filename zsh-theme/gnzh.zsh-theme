@@ -35,18 +35,10 @@ local return_code="%(?..%{$PR_RED%}%? ↵%{$PR_NO_COLOR%})"
 
 local user_host='${PR_USER}${PR_CYAN}@${PR_HOST}'
 local current_dir='%{$PR_BLUE%}%~%{$PR_NO_COLOR%}'
-local rvm_ruby=''
-if ${HOME}/.rvm/bin/rvm-prompt &> /dev/null; then # detect local user rvm installation
-  rvm_ruby='%{$PR_RED%}‹$(${HOME}/.rvm/bin/rvm-prompt i v g s)›%{$PR_NO_COLOR%}'
-elif which rvm-prompt &> /dev/null; then # detect sysem-wide rvm installation
-  rvm_ruby='%{$PR_RED%}‹$(rvm-prompt i v g s)›%{$PR_NO_COLOR%}'
-elif which rbenv &> /dev/null; then # detect Simple Ruby Version management
-  rvm_ruby='%{$PR_RED%}‹$(rbenv version | sed -e "s/ (set.*$//")›%{$PR_NO_COLOR%}'
-fi
 local git_branch='$(git_prompt_info)%{$PR_NO_COLOR%}'
 
-#PROMPT="${user_host} ${current_dir} ${rvm_ruby} ${git_branch}$PR_PROMPT "
-PROMPT="╭─${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
+#PROMPT="${user_host} ${current_dir} ${git_branch}$PR_PROMPT "
+PROMPT="╭─${user_host} ${current_dir} ${git_branch}
 ╰─$PR_PROMPT "
 RPS1="${return_code}"
 
