@@ -77,7 +77,8 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 
 "vim-plug initialization{{{
 call plug#begin()
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug '4Evergreen4/vim-hardy'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
