@@ -74,6 +74,14 @@ function mr() {
     mv $@ ~/.Trash
 }
 
+function vga-start() {
+    xrandr --output VGA-1 --mode 1920x1080 --right-of LVDS-1
+}
+
+function vga-stop() {
+    xrandr --output VGA-1 --off
+}
+
 alias la="ls -a"
 alias sl="ls"
 alias vim="nvim"
@@ -89,6 +97,8 @@ alias zshrc="nvim ~/.zshrc"
 alias g++="g++ -Wall -pedantic"
 alias pvsim="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/PVSim/PVSim.exe"
 alias vi="nvim"
+alias makeandroid="./gradlew assembleDebug && adb install -r app/build/outputs/apk/app-debug.apk"
+alias gcap="git commit -a && git push"
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH:
 export LFS=/mnt/lfs
@@ -97,6 +107,7 @@ export EDITOR="vim"
 export KSP=~/.steam/steam/SteamApps/common/Kerbal\ Space\ Program/
 export QT_STYLE_OVERRIDE=gtk
 export LS_COLORS="di=00;34"
+export ANDROID_HOME=/opt/android-sdk/tools
 
 #Dissable flow control so we can use crtl q/s
 stty -ixon -ixoff
@@ -118,7 +129,7 @@ stty -ixon -ixoff
 #Set TERM environment
 export TERM=xterm-256color
 
-PATH="/home/carl/perl5/bin:/usr/share/pk2${PATH+:}$PATH"; export PATH;
+PATH="/home/carl/perl5/bin:/usr/share/pk2${PATH+:}$PATH:$ANDROID_HOME"; export PATH;
 PERL5LIB="/home/carl/perl5/lib/perl5${PERL5LIB+:}$PERL5LIB"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/carl/perl5${PERL_LOCAL_LIB_ROOT+:}$PERL_LOCAL_LIB_ROOT"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/carl/perl5\""; export PERL_MB_OPT;
@@ -134,4 +145,4 @@ if [[ -z "$TMUX" ]] ;then
     fi
 fi
 #start mpd on login
-mpd &
+# mpd &

@@ -47,11 +47,11 @@ set list lcs=tab:»·,eol:¬
 
 "Tab settings
 
-set shiftwidth=3
-set tabstop=3
-" set expandtab
-set noexpandtab
-set softtabstop=3
+set shiftwidth=4
+set tabstop=4
+set expandtab
+" set noexpandtab
+set softtabstop=4
 set autoindent
 
 "Highlight search items
@@ -81,7 +81,7 @@ Plug 'bling/vim-airline'
 Plug '4Evergreen4/vim-hardy'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'benekastah/neomake', {'on': 'Neomake'}
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}
@@ -193,7 +193,7 @@ nnoremap <leader>fm :set foldmethod=marker<CR>
 :nnoremap <leader>h :call CS_header()<CR>
 
 "edit a file in new tab INTENTIONAL WHITESPACE
-:nnoremap <C-t> :tabe 
+:nnoremap <leader>t :tabe 
 
 "switch between buffers
 :nnoremap <leader>n :bp<CR>
