@@ -39,7 +39,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git fasd sudo extract colored-man web-search pass)
+plugins=(gitfast fasd extract colored-man web-search pass)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -97,6 +97,7 @@ export EDITOR="vim"
 export KSP=~/.steam/steam/SteamApps/common/Kerbal\ Space\ Program/
 export QT_STYLE_OVERRIDE=gtk
 export LS_COLORS="di=00;34"
+export BROWSER=firefox
 
 #Dissable flow control so we can use crtl q/s
 stty -ixon -ixoff
@@ -126,12 +127,10 @@ PERL_MM_OPT="INSTALL_BASE=/home/carl/perl5"; export PERL_MM_OPT;
 unset GREP_OPTIONS
 
 if [[ -z "$TMUX" ]] ;then
-    ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
-    if [[ -z "$ID" ]] ;then # if not available create a new one
-        tmux new-session
-    else
-        tmux attach-session -t "$ID" # if available attach to it
-    fi
+	 ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
+	 if [[ -z "$ID" ]] ;then # if not available create a new one
+		  tmux new-session
+	 else
+		  tmux attach-session -t "$ID" # if available attach to it
+	 fi
 fi
-#start mpd on login
-mpd &

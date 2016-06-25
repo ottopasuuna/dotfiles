@@ -4,6 +4,7 @@ xset fp rehash
 xhost +local:
 
 setxkbmap -option ctrl:nocaps
+xmodmap ~/.Xmodmaprc
 xrdb -merge ~/.Xresources
 
 # urxvtd -q -f -o
