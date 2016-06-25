@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/carl/Programming/usst/rover-software/embedModules/exampleCAN/exampleCAN'
+let g:netrw_dirhist_2='/home/carl/.config/awesome'
+let g:netrw_dirhist_3='/home/carl/Programming/hci/Augmented-Drawing-demo/augmentbuttonlib/build'
+let g:netrw_dirhist_4='/home/carl/Programming/hci/Augmented-Drawing-demo/app/build'
