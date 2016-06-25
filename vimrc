@@ -81,6 +81,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug '4Evergreen4/vim-hardy'
 Plug 'kien/ctrlp.vim'
+Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'benekastah/neomake', {'on': 'Neomake'}
