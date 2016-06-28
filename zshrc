@@ -107,11 +107,8 @@ export EDITOR="vim"
 export KSP=~/.steam/steam/SteamApps/common/Kerbal\ Space\ Program/
 export QT_STYLE_OVERRIDE=gtk
 export LS_COLORS="di=00;34"
-<<<<<<< HEAD
 export BROWSER=firefox
-=======
 export ANDROID_HOME=/opt/android-sdk/tools
->>>>>>> cbc90f63213a9863802be5645764f3388156ceef
 
 #Dissable flow control so we can use crtl q/s
 stty -ixon -ixoff
@@ -148,8 +145,3 @@ if [[ -z "$TMUX" ]] ;then
 		  tmux attach-session -t "$ID" # if available attach to it
 	 fi
 fi
-<<<<<<< HEAD
-=======
-#start mpd on login
-# mpd &
->>>>>>> cbc90f63213a9863802be5645764f3388156ceef

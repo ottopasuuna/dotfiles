@@ -79,10 +79,14 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'flazz/vim-colorschemes'
 Plug '4Evergreen4/vim-hardy'
 Plug 'kien/ctrlp.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/syntastic'
+Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc' "for vim-easytags
+Plug 'Valloric/ListToggle'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'benekastah/neomake', {'on': 'Neomake'}
 Plug 'majutsushi/tagbar'
@@ -90,7 +94,9 @@ Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}
 Plug 'edkolev/tmuxline.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
+Plug 'Align'
 Plug 'tomtom/tcomment_vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'ntpeters/vim-better-whitespace'
@@ -120,6 +126,7 @@ set noshowmode
 syntax on
 " colorscheme luna-term
 colorscheme Tomorrow-Night-Eighties
+" colorscheme molokai
 "colorscheme ottopasuuna
 "colorscheme badwolf
 let g:tmuxline_preset = {
@@ -136,13 +143,13 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 
-let g:syntastic_mode_map = {"mode": "passive"} "need to manually SyntasticCheck()
+let g:syntastic_mode_map = {"mode": "active"} "need to manually SyntasticCheck()
 
 let g:task_rc_override = 'rc.defaultwidth=0'
 
@@ -237,6 +244,9 @@ nnoremap <F8> :TagbarToggle<cr>
 
 "syntax checking
 nnoremap <leader>sc :SyntasticCheck<CR>
+let g:lt_location_list_toggle_map = '<leader>l'
+let g:lt_quickfix_list_toggle_map = '<leader>p'
+
 
 "Toggle spelling
 nnoremap <leader>sp :set spell!<CR>
