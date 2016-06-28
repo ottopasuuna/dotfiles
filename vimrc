@@ -76,6 +76,8 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 "
 
 "vim-plug initialization{{{
+
+
 call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -96,7 +98,6 @@ Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Align'
 Plug 'tomtom/tcomment_vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'ntpeters/vim-better-whitespace'
@@ -207,6 +208,7 @@ nnoremap <leader>fm :set foldmethod=marker<CR>
 "switch between buffers
 :nnoremap <leader>n :bp<CR>
 :nnoremap <leader>m :bn<CR>
+
 "close buffer
 :nnoremap <leader>q :bd<CR>
 
