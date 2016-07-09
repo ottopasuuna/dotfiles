@@ -3,3 +3,6 @@
 	email = hofmeister.carl@gmail.com
 [push]
 	default = simple
+
+[core]
+	editor = nvim

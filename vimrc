@@ -83,6 +83,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
 Plug '4Evergreen4/vim-hardy'
+Plug 'Arduino-syntax-file'
 Plug 'kien/ctrlp.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/syntastic'
@@ -107,6 +108,9 @@ if !has('nvim')
    Plug 'Shougo/neocomplete.vim'
 else
    Plug 'Shougo/deoplete.nvim'
+   Plug 'zchee/deoplete-clang'
+   Plug 'zchee/deoplete-jedi'
+   Plug 'davidhalter/jedi'
    let g:deoplete#enable_at_startup = 1
 endif
 
@@ -126,10 +130,12 @@ set noshowmode
 " plugin manager to install colorschemes)
 syntax on
 " colorscheme luna-term
-colorscheme Tomorrow-Night-Eighties
-" colorscheme molokai
+" colorscheme Tomorrow-Night-Eighties
+colorscheme molokai
 "colorscheme ottopasuuna
-"colorscheme badwolf
+" colorscheme badwolf
+highlight Normal ctermbg=None
+
 let g:tmuxline_preset = {
     \'a' : '#S',
     \'win' : ['#I #W'],
