@@ -38,6 +38,7 @@ source ~/.zsh-theme/gnzh.zsh-theme
 alias ls='ls --color=tty'
 alias la="ls -a"
 alias sl="ls"
+alias ll="ls -l"
 alias vim="nvim"
 alias archey="archey3"
 alias t="task"
