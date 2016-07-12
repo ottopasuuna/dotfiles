@@ -25,6 +25,8 @@ source /usr/share/zsh/scripts/zplug/init.zsh
 zplug "zplug/zplug"
 zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
 zplug "zsh-users/zsh-syntax-highlighting"
+zplug "plugins/colored-man-pages", from:oh-my-zsh
+zplug "caarlos0/zsh-open-pr"
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -33,6 +35,7 @@ if ! zplug check --verbose; then
 fi
 zplug load
 
+source ~/.zsh-theme/zsh-git-prompt/zshrc.sh
 source ~/.zsh-theme/gnzh.zsh-theme
 #Aliases
 alias ls='ls --color=tty'
@@ -101,7 +104,7 @@ function vga-stop() {
 # PERL_LOCAL_LIB_ROOT="/home/carl/perl5${PERL_LOCAL_LIB_ROOT+:}$PERL_LOCAL_LIB_ROOT"; export PERL_LOCAL_LIB_ROOT;
 # PERL_MB_OPT="--install_base \"/home/carl/perl5\""; export PERL_MB_OPT;
 # PERL_MM_OPT="INSTALL_BASE=/home/carl/perl5"; export PERL_MM_OPT;
-# unset GREP_OPTIONS
+unset GREP_OPTIONS
 
 #TODO move this n awesomewm config
 if [[ -z "$TMUX" ]] ;then
