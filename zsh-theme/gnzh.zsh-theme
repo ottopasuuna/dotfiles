@@ -42,3 +42,14 @@ PROMPT="╭─${user_host} ${current_dir} ${git_branch}
 RPS1="${return_code}"
 
 ZSH_THEME_GIT_PROMPT_CACHE=1
+ZSH_THEME_GIT_PROMPT_PREFIX="("
+ZSH_THEME_GIT_PROMPT_SUFFIX=")"
+ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[yellow]%} "
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}%{●%G%}"
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{✖%G%}"
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{✚%G%}"
+ZSH_THEME_GIT_PROMPT_BEHIND=" %{↓%G%}"
+ZSH_THEME_GIT_PROMPT_AHEAD=" %{↑%G%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED=" %{…%G%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
