@@ -13,6 +13,7 @@ nnoremap <C-S-K> :tabm<Space>-1<Return>
 nnoremap x D
 noremap j 3j
 noremap k 3k
+nnoremap <C-q> j
 set "editor=termite -e vim"
 set hintchars=asdfjklrtyunv
 source! /home/carl/.vimperatorrc.local

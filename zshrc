@@ -11,11 +11,17 @@ autoload -U zargs
 zstyle ':completion:*' menu select
 zstyle ':completion::complete:*' use-cache 1
 #don't know what this does
-zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' completer _expand _complete _ignored _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
+unsetopt CASE_GLOB
 setopt COMPLETE_ALIASES
 setopt HIST_IGNORE_DUPS
+setopt GLOB_COMPLETE
 setopt emacs #expected readline behaivior
+setopt EXTENDED_GLOB
 
 #Dissable flow control so we can use crtl q/s
 stty -ixon -ixoff
@@ -25,6 +31,7 @@ source /usr/share/zsh/scripts/zplug/init.zsh
 zplug "zplug/zplug"
 zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
 zplug "zsh-users/zsh-syntax-highlighting"
+zplug "bcho/Watson.zsh"
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "caarlos0/zsh-open-pr"
 if ! zplug check --verbose; then
@@ -57,6 +64,7 @@ alias pvsim="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/PVSim/PVSim.exe"
 alias vi="nvim"
 alias makeandroid="./gradlew assembleDebug && adb install -r app/build/outputs/apk/app-debug.apk"
 alias gcap="git commit -a && git push"
+alias buspirate="picocom -b 115200 /dev/buspirate"
 
 #Variables
 export PATH=$HOME/bin:/usr/local/bin:$PATH:
