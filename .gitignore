@@ -1,0 +1,5 @@
+vim/.init.vim-rplugin~
+vim/autoload/
+vim/bundle/*
+vim/plugged/
+
