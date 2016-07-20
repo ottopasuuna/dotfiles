@@ -64,8 +64,9 @@ alias pvsim="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/PVSim/PVSim.exe"
 alias vi="nvim"
 alias makeandroid="./gradlew assembleDebug && adb install -r app/build/outputs/apk/app-debug.apk"
 alias gcap="git commit -a && git push"
-alias gl="git log --format=\"%C(auto)%h %d %Creset%s%n%Cgreen%ar %C(magenta)%an\" --graph"
+alias gl="git log --format=\"%C(auto)%h %d %Creset%s%n  %Cgreen%ar %C(magenta)%an\" --graph"
 alias buspirate="picocom -b 115200 /dev/buspirate"
+alias upass="sudo umount /media/KINGSTON"
 
 #Variables
 export PATH=$HOME/bin:/usr/local/bin:$PATH:
