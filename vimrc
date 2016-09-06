@@ -84,7 +84,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
 Plug '4Evergreen4/vim-hardy'
 Plug 'Arduino-syntax-file'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/syntastic'
 Plug 'xolox/vim-easytags'
@@ -145,6 +147,16 @@ let g:tmuxline_preset = {
     \'y' : '%H:%M|%b%d',
     \'z' : ['#(whoami)@#H'],
     \'options' : {'status-justify' : 'left'}}
+
+"Unite settings
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#custom#profile('default', 'context', {
+            \   'start_insert': 1,
+            \   'winheight': 10,
+            \   'direction': 'botright',
+            \ })
+
+autocmd FileType unite call s:unite_settings()
 
 "recomended settings for syntastic
 set statusline+=%#warningmsg#
@@ -258,6 +270,9 @@ let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>p'
 
 
+"Unite
+" nnoremap <C-p> :Unite file file_rec buffer<CR>
+
 "Toggle spelling
 nnoremap <leader>sp :set spell!<CR>
 
@@ -296,6 +311,12 @@ function! CS_header()
     put ='    clh104' "NSID
     put ='*/'
     :normal 5kdd5jp
+endfunction
+
+"settings for unite interface
+function! s:unite_settings()
+    imap <buffer> <C-j> <Plug>(unite_select_next_line)
+    imap <buffer> <C-k> <Plug>(unite_select_previous_line)
 endfunction
 
 "}}}
