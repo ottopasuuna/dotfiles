@@ -99,6 +99,8 @@ alias pvsim="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/PVSim/PVSim.exe"
 alias vi="nvim"
 alias makeandroid="./gradlew assembleDebug && adb install -r app/build/outputs/apk/app-debug.apk"
 alias gcap="git commit -a && git push"
+alias upass="sudo umount /media/KINGSTON"
+alias modelsim="/opt/altera/16.0/modelsim_ase/bin/vsim"
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH:
 export LFS=/mnt/lfs

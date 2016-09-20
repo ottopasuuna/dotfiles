@@ -3,3 +3,5 @@
 	email = hofmeister.carl@gmail.com
 [push]
 	default = simple
+[merge]
+	tool = vimdiff

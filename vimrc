@@ -95,6 +95,7 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}
 Plug 'edkolev/tmuxline.vim'
 Plug 'jpalardy/vim-slime'
+Plug 'jalvesaq/Nvim-R'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
@@ -217,6 +218,8 @@ nnoremap <leader>fm :set foldmethod=marker<CR>
 :nnoremap <C-j> <C-w>j
 :nnoremap <C-h> <C-w>h " doesn't work in neovim
 :nnoremap <C-l> <C-w>l
+:nnoremap <C-\<> 5<C-w><
+:nnoremap <C-\>> 5<C-w>>
 
 "Move line up or down
 nnoremap - ddp
