@@ -35,11 +35,21 @@ local return_code="%(?..%{$PR_RED%}%? ↵%{$PR_NO_COLOR%})"
 
 local user_host='${PR_USER}${PR_CYAN}@${PR_HOST}'
 local current_dir='%{$PR_BLUE%}%~%{$PR_NO_COLOR%}'
-local git_branch='$(git_prompt_info)%{$PR_NO_COLOR%}'
+local git_branch='$(git_super_status)%{$PR_NO_COLOR%}'
 
 PROMPT="╭─${user_host} ${current_dir} ${git_branch}
 ╰─$PR_PROMPT "
 RPS1="${return_code}"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$PR_YELLOW%}‹"
-ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$PR_NO_COLOR%}"
+ZSH_THEME_GIT_PROMPT_CACHE=1
+ZSH_THEME_GIT_PROMPT_PREFIX="("
+ZSH_THEME_GIT_PROMPT_SUFFIX=")"
+ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[yellow]%} "
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}%{●%G%}"
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{✖%G%}"
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{✚%G%}"
+ZSH_THEME_GIT_PROMPT_BEHIND=" %{↓%G%}"
+ZSH_THEME_GIT_PROMPT_AHEAD=" %{↑%G%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED=" %{…%G%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"

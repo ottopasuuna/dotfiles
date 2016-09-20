@@ -1,5 +1,7 @@
-vim/.init.vim-rplugin~
 vim/autoload/
-vim/bundle/*
-vim/plugged/
+vim/bundle
+vim/plugged
+vim/autoload/plug.vim.old
+vim/.init.vim-rplugin~
+vim/.netrwhist
 
