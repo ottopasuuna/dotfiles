@@ -27,7 +27,7 @@ setopt EXTENDED_GLOB
 stty -ixon -ixoff
 
 #plugin management with zplug
-source /usr/share/zsh/scripts/zplug/init.zsh
+source ~/.zplug/init.zsh
 zplug "zplug/zplug"
 zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
 zplug "zsh-users/zsh-syntax-highlighting"
