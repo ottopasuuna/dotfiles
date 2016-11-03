@@ -1,5 +1,5 @@
 echo 'Updating mirror list'
-sudo reflector --verbose --country 'Canada' -l 10 -p http --sort rate --save /etc/pacman.d/mirrorlist
+sudo reflector --verbose --country 'Canada' -f 10 -p http --sort score --save /etc/pacman.d/mirrorlist
 echo 'Backing up package list'
 sudo aura -B
 echo 'Removing all orphan packages'
