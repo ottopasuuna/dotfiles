@@ -41,6 +41,12 @@ set number
 "Don't wrap lines
 " set nowrap
 
+" hide the netrw banner
+let g:netrw_banner=0
+" don't show hidden files by default. gh to show
+let g:netrw_list_hide='^\..*'
+let g:netrw_hide=1
+let g:netrw_liststyle=3
 
 "Show some nonprinting characters
 set list lcs=tab:»·,eol:¬
@@ -84,7 +90,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
 Plug '4Evergreen4/vim-hardy'
 Plug 'Arduino-syntax-file'
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', {'dir': '~/.fzf'}
+Plug 'junegunn/fzf.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'rust-lang/rust.vim'
@@ -92,8 +100,9 @@ Plug 'scrooloose/syntastic'
 Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc' "for vim-easytags
 Plug 'Valloric/ListToggle'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'benekastah/neomake', {'on': 'Neomake'}
+" Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+" Plug 'tpope/vim-vinegar'
+Plug 'benekastah/neomake',
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}
 Plug 'edkolev/tmuxline.vim'
@@ -174,7 +183,27 @@ let g:syntastic_mode_map = {"mode": "active"} "need to manually SyntasticCheck()
 
 let g:task_rc_override = 'rc.defaultwidth=0'
 
-"Neomake
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }"Neomake
+
 " let g:neomake_c_gcc_maker = {
 "    \ 'args': ['-Wall'],
 "    \}
@@ -248,6 +277,9 @@ nnoremap K ddkPJ
 "change function parameter
 nnoremap cp ct,
 
+"Bind for fzf
+nnoremap <C-p> :Files<CR>
+
 "Move to begining and end of line
 nnoremap H ^
 nnoremap L $
@@ -261,7 +293,8 @@ nnoremap <leader>ev :tabe $MYVIMRC<cr>
 
 nnoremap <F1> :SCCompile<cr>
 nnoremap <F2> :SCCompileRun<cr>.
-nnoremap <F5> :NERDTreeToggle<CR>
+" nnoremap <F5> :NERDTreeToggle<CR>
+nnoremap <F5> :e.<CR>
 nnoremap <F8> :TagbarToggle<cr>
 
 "syntax checking

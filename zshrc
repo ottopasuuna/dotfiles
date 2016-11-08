@@ -28,7 +28,8 @@ stty -ixon -ixoff
 
 #plugin management with zplug
 source /usr/share/zsh/scripts/zplug/init.zsh
-zplug "zplug/zplug"
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "bcho/Watson.zsh"
