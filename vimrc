@@ -20,6 +20,9 @@ set enc=utf8
 "Automatically load vimrc after saving
 autocmd! bufwritepost ~/.vimrc source %
 
+"Automatically run syntax checks on saving
+autocmd! BufWritePost * Neomake
+
 "allow plugins to read filetypes
 filetype plugin indent on
 " filetype off
@@ -88,23 +91,25 @@ call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
-Plug '4Evergreen4/vim-hardy'
-Plug 'Arduino-syntax-file'
+Plug '4Evergreen4/vim-hardy', {'for': 'arduino'}
+Plug 'Arduino-syntax-file', {'for': 'arduino'}
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', {'dir': '~/.fzf'}
 Plug 'junegunn/fzf.vim'
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/vimproc.vim', {'do': 'make'}
-Plug 'rust-lang/rust.vim'
-Plug 'scrooloose/syntastic'
-Plug 'xolox/vim-easytags'
-Plug 'xolox/vim-misc' "for vim-easytags
+Plug 'junegunn/vim-github-dashboard', {'on': ['GHDashboard', 'GHActivity']}
+" Plug 'Shougo/unite.vim'
+" Plug 'Shougo/vimproc.vim', {'do': 'make'}
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
+" Plug 'scrooloose/syntastic'
+Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'
 Plug 'Valloric/ListToggle'
+Plug 'jaxbot/github-Issues.vim', {'on': ['Gissues', 'Giadd']}
 " Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 " Plug 'tpope/vim-vinegar'
 Plug 'benekastah/neomake',
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}
+Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'edkolev/tmuxline.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-surround'
@@ -120,8 +125,8 @@ if !has('nvim')
 else
    Plug 'Shougo/deoplete.nvim'
    Plug 'zchee/deoplete-clang'
-   Plug 'zchee/deoplete-jedi'
-   Plug 'davidhalter/jedi'
+   Plug 'zchee/deoplete-jedi', {'for': 'python'}
+   Plug 'davidhalter/jedi', {'for': 'python'}
    let g:deoplete#enable_at_startup = 1
    let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
    let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
@@ -135,9 +140,32 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
 let g:airline#extensions#tmuxline#enabled = 0
-let g:airline#extensions#bufferline#enabled = 0
+let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#whitespace#trailing_format = 't[%s]'
+let g:airline#extensions#whitespace#mixed_indent_format = 'm[%s]'
+let g:airline#extensions#whitespace#mixed_indent_file_format = 'mf[%s]'
+let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
+      \ }
 " Hide vim's default mode indicator
 set noshowmode
+
+"load github token for github plugins
+source $HOME/.githubtoken.vim
+let g:gissues_lazy_load = 1
+let g:github_dashboard = {'username': 'ottopasuuna', 'password': g:github_access_token }
 
 "syntax highlighting (added here to allow for
 " plugin manager to install colorschemes)
@@ -158,12 +186,12 @@ let g:tmuxline_preset = {
     \'options' : {'status-justify' : 'left'}}
 
 "Unite settings
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#custom#profile('default', 'context', {
-            \   'start_insert': 1,
-            \   'winheight': 10,
-            \   'direction': 'botright',
-            \ })
+" call unite#filters#matcher_default#use(['matcher_fuzzy'])
+" call unite#custom#profile('default', 'context', {
+"             \   'start_insert': 1,
+"             \   'winheight': 10,
+"             \   'direction': 'botright',
+"             \ })
 
 autocmd FileType unite call s:unite_settings()
 
@@ -186,7 +214,7 @@ let g:task_rc_override = 'rc.defaultwidth=0'
 " This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
+  \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 
 " Customize fzf colors to match your color scheme
@@ -204,12 +232,15 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }"Neomake
 
-" let g:neomake_c_gcc_maker = {
-"    \ 'args': ['-Wall'],
-"    \}
-" let g:neomake_c_enabled_markers = ['gcc']
+let g:neomake_c_gcc_maker = {
+   \ 'args': ['-Wall -Werror -pedantic'],
+   \}
+
+let g:neomake_c_enabled_makers = ['gcc']
+let g:neomake_python_enabled_makers = ['python']
+
 let g:neomake_warning_sign = {
-   \ 'text': 'W',
+   \ 'text': '⚠',
    \ 'texthl': 'WarningMsg',
    \ }
 let g:neomake_error_sign = {
@@ -232,6 +263,7 @@ nnoremap ; :
 vnoremap ; :
 
 inoremap jk <ESC>
+tnoremap <ESC><ESC> <C-\><C-n>
 
 "quit vim
 :nnoremap <leader><leader> :wq<CR>
@@ -248,9 +280,6 @@ nnoremap <leader>fi :set foldmethod=indent<CR>
 "switch to marker folding
 nnoremap <leader>fm :set foldmethod=marker<CR>
 
-"insert computer science header
-:nnoremap <leader>h :call CS_header()<CR>
-
 "edit a file in new tab INTENTIONAL WHITESPACE
 :nnoremap <leader>t :tabe 
 
@@ -264,7 +293,7 @@ nnoremap <leader>fm :set foldmethod=marker<CR>
 "move beween windows
 :nnoremap <C-k> <C-w>k
 :nnoremap <C-j> <C-w>j
-:nnoremap <C-h> <C-w>h " doesn't work in neovim
+:nnoremap <C-h> <C-w>h "Requires terminal patch for nvim
 :nnoremap <C-l> <C-w>l
 
 "Move line up or down
@@ -291,14 +320,13 @@ nnoremap <CR> o<Esc>
 "Edit vimrc in new tab
 nnoremap <leader>ev :tabe $MYVIMRC<cr>
 
-nnoremap <F1> :SCCompile<cr>
-nnoremap <F2> :SCCompileRun<cr>.
-" nnoremap <F5> :NERDTreeToggle<CR>
-nnoremap <F5> :e.<CR>
+nnoremap <F1> :e.<cr>
+nnoremap <F2> :UndotreeToggle<cr>
+nnoremap <F5> :Neomake!<CR>
 nnoremap <F8> :TagbarToggle<cr>
 
 "syntax checking
-nnoremap <leader>sc :SyntasticCheck<CR>
+" nnoremap <leader>sc :SyntasticCheck<CR>
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>p'
 
@@ -334,17 +362,6 @@ iabbrev teh the
 "}}}
 
 " =============== Functions ================ {{{
-
-"puts my header I need to include for school assignments. (confidential info
-"removed) (oops, nevermind, I forgot to remove my info for many commits...).
-function! CS_header()
-    put ='/*'
-    put ='    Carl Hofmeister'
-    put ='    11162955' "Student number
-    put ='    clh104' "NSID
-    put ='*/'
-    :normal 5kdd5jp
-endfunction
 
 "settings for unite interface
 function! s:unite_settings()

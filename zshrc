@@ -70,7 +70,7 @@ alias buspirate="picocom -b 115200 /dev/buspirate"
 alias upass="sudo umount /media/KINGSTON"
 
 #Variables
-export PATH=$HOME/bin:/usr/local/bin:$PATH:
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH:
 export LFS=/mnt/lfs
 # export STEAM_RUNTIME=0
 export EDITOR="vim"

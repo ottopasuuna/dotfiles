@@ -6,3 +6,7 @@
 
 [core]
 	editor = nvim
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff

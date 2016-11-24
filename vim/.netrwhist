@@ -1,5 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/carl/dotfiles'
-let g:netrw_dirhist_2='/home/carl/dotfiles/awesome/radical'
-let g:netrw_dirhist_3='/home/carl/dotfiles'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/carl/Programming/usst/rover-webui/WebUI/views'
+let g:netrw_dirhist_2='/home/carl/Programming/usst/rover-webui/WebUI/views/maps'
+let g:netrw_dirhist_3='/home/carl/Programming/usst/rover-webui/WebUI'
+let g:netrw_dirhist_4='/home/carl/Programming/usst/rover-webui/WebUI/static/scripts/gamepad.js-master'
+let g:netrw_dirhist_5='/home/carl/Programming/usst/rover-webui/WebUI/static/scripts/gamepad.js-master/site'
+let g:netrw_dirhist_6='/home/carl/Programming/usst/rover-webui/WebUI/static/scripts/gamepad.js-master/site/static'
+let g:netrw_dirhist_7='/home/carl/Programming/usst/rover-webui/WebUI'
+let g:netrw_dirhist_8='/home/carl/Programming/C/neomake'
