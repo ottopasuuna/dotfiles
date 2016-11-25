@@ -28,7 +28,7 @@ stty -ixon -ixoff
 
 #plugin management with zplug
 source ~/.zplug/init.zsh
-source /usr/share/zsh/scripts/zplug/init.zsh
+# source /usr/share/zsh/scripts/zplug/init.zsh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 zplug "zplug/zplug"
@@ -67,7 +67,6 @@ alias pvsim="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/PVSim/PVSim.exe"
 alias vi="nvim"
 alias makeandroid="./gradlew assembleDebug && adb install -r app/build/outputs/apk/app-debug.apk"
 alias gcap="git commit -a && git push"
-<<<<<<< HEAD
 alias upass="sudo umount /media/KINGSTON"
 alias modelsim="/opt/altera/16.0/modelsim_ase/bin/vsim"
 alias gl="git log --format=\"%C(auto)%h %d %Creset%s%n%Cgreen%ar %C(magenta)%an\" --graph --all"
