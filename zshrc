@@ -66,7 +66,7 @@ alias makeandroid="./gradlew assembleDebug && adb install -r app/build/outputs/a
 alias gcap="git commit -a && git push"
 alias upass="sudo umount /media/KINGSTON"
 alias modelsim="/opt/altera/16.0/modelsim_ase/bin/vsim"
-alias gl="git log --format=\"%C(auto)%h %d %Creset%s%n%Cgreen%ar %C(magenta)%an\" --graph"
+alias gl="git log --format=\"%C(auto)%h %d %Creset%s%n%Cgreen%ar %C(magenta)%an\" --graph --all"
 alias buspirate="picocom -b 115200 /dev/buspirate"
 
 #Variables
