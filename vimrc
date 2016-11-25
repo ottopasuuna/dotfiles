@@ -280,6 +280,9 @@ inoremap <C-p> System.out.println(
 "Capitalize current word in insert mode.
 :inoremap <c-c> <esc>g~iwea
 
+"put space around operator
+nnoremap <leader><space> i <esc>la <esc>h
+
 "abbreviations (auto insert/correct text)
 iabbrev tehn then
 iabbrev incldue include
