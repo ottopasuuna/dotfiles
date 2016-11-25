@@ -28,6 +28,9 @@ stty -ixon -ixoff
 
 #plugin management with zplug
 source ~/.zplug/init.zsh
+source /usr/share/zsh/scripts/zplug/init.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 zplug "zplug/zplug"
 zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
 zplug "zsh-users/zsh-syntax-highlighting"
@@ -64,13 +67,15 @@ alias pvsim="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/PVSim/PVSim.exe"
 alias vi="nvim"
 alias makeandroid="./gradlew assembleDebug && adb install -r app/build/outputs/apk/app-debug.apk"
 alias gcap="git commit -a && git push"
+<<<<<<< HEAD
 alias upass="sudo umount /media/KINGSTON"
 alias modelsim="/opt/altera/16.0/modelsim_ase/bin/vsim"
 alias gl="git log --format=\"%C(auto)%h %d %Creset%s%n%Cgreen%ar %C(magenta)%an\" --graph --all"
 alias buspirate="picocom -b 115200 /dev/buspirate"
 
-#Variables
 export PATH=$HOME/bin:/usr/local/bin:$PATH:
+#Variables
+#export PATH=$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH:
 export LFS=/mnt/lfs
 # export STEAM_RUNTIME=0
 export EDITOR="vim"

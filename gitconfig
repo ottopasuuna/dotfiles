@@ -3,7 +3,10 @@
 	email = hofmeister.carl@gmail.com
 [push]
 	default = simple
-[merge]
-	tool = vimdiff
+
 [core]
 	editor = nvim
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
