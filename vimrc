@@ -330,6 +330,8 @@ nnoremap <F8> :TagbarToggle<cr>
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>p'
 
+"Git add and commit
+nnoremap <leader>gc :Git commit -a
 
 "Unite
 " nnoremap <C-p> :Unite file file_rec buffer<CR>

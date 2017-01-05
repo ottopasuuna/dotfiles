@@ -68,6 +68,9 @@ alias gcap="git commit -a && git push"
 alias gl="git log --format=\"%C(auto)%h %d %Creset%s%n  %Cgreen%ar %C(magenta)%an\" --graph"
 alias buspirate="picocom -b 115200 /dev/buspirate"
 alias upass="sudo umount /media/KINGSTON"
+for n in {1..9}; do
+    alias $n="%$n";
+done
 
 #Variables
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH:
@@ -81,6 +84,10 @@ export BROWSER=firefox
 export ANDROID_HOME=/opt/android-sdk/tools
 export TERM=xterm-256color
 export DISPLAY=:0.0
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
 
 #Functions
 function search() {
