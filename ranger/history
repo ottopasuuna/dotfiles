@@ -45,6 +45,6 @@ mkdir tmp
 shell tar -czvf X3AP.tar.gz X3\ Terran\ Conflict
 mkdir customstart
 open_with 1
-delete
 rename msgFilterRules.dat
 open_with vim
+delete
