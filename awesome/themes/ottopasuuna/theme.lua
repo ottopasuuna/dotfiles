@@ -16,7 +16,7 @@ white = "#f1f5e0"
 black = "#141414"
 
 grey0 = "#262626"
-grey1 = "#6e6e6e"
+grey1 = "#404040"
 
 lblue = "#8080ff"
 lgreen = "#80ff80"
@@ -44,7 +44,10 @@ theme.bg_systray    = theme.bg_normal
 theme.fg_normal     = white    --
 theme.fg_focus      = cyan     --
 theme.fg_urgent     = magenta
-theme.fg_minimize   = green    --
+theme.fg_minimize   = white    --
+theme.fg_widget_value = white
+theme.fg_widget_clock = yellow
+theme.fg_widget_value_important = red
 
 --Border settings
 theme.border_width  = 1

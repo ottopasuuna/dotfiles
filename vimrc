@@ -24,7 +24,7 @@ autocmd! bufwritepost ~/.vimrc source %
 autocmd! BufWritePost * Neomake
 
 "allow plugins to read filetypes
-filetype plugin indent on
+filetype plugin on
 " filetype off
 
 au FileType txt set tw=80 spell
@@ -40,6 +40,9 @@ let maplocalleader = "\\"
 
 "Turn on line numbers
 set number
+
+"don't redraw whle executing macros, for performance
+set lazyredraw
 
 "Don't wrap lines
 " set nowrap
@@ -197,18 +200,18 @@ let g:tmuxline_preset = {
 autocmd FileType unite call s:unite_settings()
 
 "recomended settings for syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = "⚠"
-
-let g:syntastic_mode_map = {"mode": "active"} "need to manually SyntasticCheck()
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 2
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_error_symbol = "✗"
+" let g:syntastic_warning_symbol = "⚠"
+"
+" let g:syntastic_mode_map = {"mode": "active"} "need to manually SyntasticCheck()
 
 let g:task_rc_override = 'rc.defaultwidth=0'
 
@@ -294,7 +297,8 @@ nnoremap <leader>fm :set foldmethod=marker<CR>
 "move beween windows
 :nnoremap <C-k> <C-w>k
 :nnoremap <C-j> <C-w>j
-:nnoremap <C-h> <C-w>h "Requires terminal patch for nvim
+ "Requires terminal patch for nvim:
+:nnoremap <C-h> <C-w>h
 :nnoremap <C-l> <C-w>l
 :nnoremap <C-\<> 5<C-w><
 :nnoremap <C-\>> 5<C-w>>
@@ -333,6 +337,11 @@ nnoremap <F8> :TagbarToggle<cr>
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>p'
 
+"Git add and commit
+nnoremap <leader>gc :Git commit -a
+
+"Unite
+" nnoremap <C-p> :Unite file file_rec buffer<CR>
 
 "Unite
 " nnoremap <C-p> :Unite file file_rec buffer<CR>

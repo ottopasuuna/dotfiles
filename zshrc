@@ -72,9 +72,13 @@ alias modelsim="/opt/altera/16.0/modelsim_ase/bin/vsim"
 alias gl="git log --format=\"%C(auto)%h %d %Creset%s%n%Cgreen%ar %C(magenta)%an\" --graph --all"
 alias buspirate="picocom -b 115200 /dev/buspirate"
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/carl/.gem/ruby/2.4.0/bin
+#export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/carl/.gem/ruby/2.4.0/bin
+for n in {1..9}; do
+    alias $n="%$n";
+done
+
 #Variables
-#export PATH=$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH:
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.3.0/bin:/home/carl/.gem/ruby/2.4.0/bin:$PATH:
 export LFS=/mnt/lfs
 # export STEAM_RUNTIME=0
 export EDITOR="vim"
@@ -85,6 +89,10 @@ export BROWSER=firefox
 export ANDROID_HOME=/opt/android-sdk/tools
 export TERM=xterm-256color
 export DISPLAY=:0.0
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
 
 #Functions
 function search() {
