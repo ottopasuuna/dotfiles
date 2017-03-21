@@ -359,6 +359,9 @@ inoremap <C-p> System.out.println(
 "put space around operator
 nnoremap <leader><space> i <esc>la <esc>h
 
+"Git/fugitive hotkeys
+nnoremap <leader>gc :Git commit -a<CR>
+
 "abbreviations (auto insert/correct text)
 iabbrev tehn then
 iabbrev incldue include

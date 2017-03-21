@@ -72,7 +72,7 @@ alias modelsim="/opt/altera/16.0/modelsim_ase/bin/vsim"
 alias gl="git log --format=\"%C(auto)%h %d %Creset%s%n%Cgreen%ar %C(magenta)%an\" --graph --all"
 alias buspirate="picocom -b 115200 /dev/buspirate"
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH:
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/carl/.gem/ruby/2.4.0/bin
 #Variables
 #export PATH=$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH:
 export LFS=/mnt/lfs
