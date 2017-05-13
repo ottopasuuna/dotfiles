@@ -94,8 +94,8 @@ call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
-Plug '4Evergreen4/vim-hardy', {'for': 'arduino'}
-Plug 'Arduino-syntax-file', {'for': 'arduino'}
+" Plug '4Evergreen4/vim-hardy', {'for': 'arduino'}
+" Plug 'Arduino-syntax-file', {'for': 'arduino'}
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', {'dir': '~/.fzf'}
 Plug 'junegunn/fzf.vim'
