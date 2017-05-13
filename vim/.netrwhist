@@ -1,4 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/carl/Programming/os/BBB-BareMetal/04_UART'
 let g:netrw_dirhist_2='/home/carl/Programming/os/TermProject/drivers'
+let g:netrw_dirhist_3='/home/carl/Programming/Micros/stm32/dumbRTOS/drivers'
+let g:netrw_dirhist_4='/home/carl'
+let g:netrw_dirhist_5='/home/carl/Programming/usst/rover-embedded/VESCArduinoExample'
+let g:netrw_dirhist_6='/home/carl/Programming/usst/roveberrypy'
+let g:netrw_dirhist_7='/home/carl/Programming/usst/roveberrypy/testprocess'
+let g:netrw_dirhist_8='/home/carl/Programming/usst/roveberrypy'
+let g:netrw_dirhist_9='/home/carl/Programming/usst/roveberrypy/roverprocess'

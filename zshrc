@@ -54,6 +54,7 @@ alias vim="nvim"
 alias archey="archey3"
 alias t="task"
 alias ta="task add"
+alias tm="task mod"
 alias tw="vim +TW"
 alias yt="youtube-viewer -C"
 alias suspend="systemctl suspend"
@@ -76,7 +77,7 @@ done
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.3.0/bin:/home/carl/.gem/ruby/2.4.0/bin:$PATH:
 export LFS=/mnt/lfs
 # export STEAM_RUNTIME=0
-export EDITOR="vim"
+export EDITOR="nvim"
 export KSP=~/.steam/steam/SteamApps/common/Kerbal\ Space\ Program/
 export QT_STYLE_OVERRIDE=gtk
 export LS_COLORS="di=00;34"

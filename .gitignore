@@ -4,3 +4,5 @@ vim/autoload/plug.vim.old
 vim/.init.vim-rplugin~
 vim/.netrwhist
 
+ranger/history
+ranger/bookmarks

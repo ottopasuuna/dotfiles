@@ -123,6 +123,10 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'mhinz/vim-signify'
 Plug 'bling/vim-bufferline'
+Plug 'vimwiki/vimwiki'
+" Plug 'tbabej/taskwiki'
+Plug 'blindFS/vim-taskwarrior'
+Plug 'powerman/vim-plugin-AnsiEsc'
 if !has('nvim')
    Plug 'Shougo/neocomplete.vim'
 else
@@ -373,6 +377,14 @@ iabbrev teh the
 function! s:unite_settings()
     imap <buffer> <C-j> <Plug>(unite_select_next_line)
     imap <buffer> <C-k> <Plug>(unite_select_previous_line)
+endfunction
+
+function! Header_guard(var)
+    put ='#ifndef __' . a:var . '__'
+    put ='#define __' . a:var . '__'
+    put =''
+    put =''
+    put ='#endif /* __' . a:var . '__ */'
 endfunction
 
 "}}}
