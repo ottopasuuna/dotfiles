@@ -59,12 +59,12 @@ set list lcs=tab:»·,eol:¬
 
 "Tab settings
 
+set autoindent
 set shiftwidth=4
 set tabstop=4
-set expandtab
-" set noexpandtab
+" set expandtab
+set noexpandtab
 set softtabstop=4
-set autoindent
 
 "Highlight search items
 " set hlsearch
