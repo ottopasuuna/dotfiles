@@ -115,7 +115,6 @@ Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'edkolev/tmuxline.vim'
 Plug 'jpalardy/vim-slime'
-Plug 'jalvesaq/Nvim-R'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
