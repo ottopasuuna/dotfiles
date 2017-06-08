@@ -14,7 +14,6 @@ local naughty = require("naughty")
 
 local widgets = require("widgets")
 -- require("eminent")
-local treesome = require("treesome")
 local keydoc = require("keydoc")
 
 -- {{{ Error handling ******************************************************
@@ -51,7 +50,8 @@ terminal = "termite"
 terminal_cmd = terminal
 editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
-inetbrowser = "firefox"
+-- inetbrowser = "firefox"
+inetbrowser = "qutebrowser"
 emailclient = "thunderbird"
 filemanager = terminal .. " -e ranger"
 
@@ -70,7 +70,6 @@ local layouts =
     awful.layout.suit.fair,
     -- awful.layout.suit.fair.horizontal,
     awful.layout.suit.floating,
-    treesome,
 }
 
 awesome_menu = {
@@ -371,7 +370,7 @@ globalkeys = awful.util.table.join(
             if client.focus then
                 client.focus:raise()
             end
-			end, "Focus previous client"),
+        end, "Focus previous client"),
 
     -- Standard program
     awful.key({ modkey, "Control" }, "r", awesome.restart),
