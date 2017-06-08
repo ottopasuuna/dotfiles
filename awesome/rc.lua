@@ -120,6 +120,12 @@ end
 -- }}} ____________________________________________________________________
 
 -- {{{ Wibox
+-- Battery
+batterywidget = lain.widget.bat({
+    settings = function()
+    widget:set_text(bat_now.perc .. '%')
+    end
+})
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -248,6 +254,7 @@ awful.screen.connect_for_each_screen(function(s)
             widgets.weather,
             widgets.imap,
             widgets.alsa,
+            batterywidget,
             widgets.clock,
             s.mylayoutbox
         },
