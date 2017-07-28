@@ -121,6 +121,10 @@ function vga-stop() {
     xrandr --output VGA-1 --off
 }
 
+function average() {
+    awk '{sum+=$1} END {print sum/NR}' $1
+}
+
 
 # Uncomment these if trouble occurs
 # PATH="/home/carl/perl5/bin:/usr/share/pk2${PATH+:}$PATH:$ANDROID_HOME"; export PATH;

@@ -62,8 +62,7 @@ set list lcs=tab:»·,eol:¬
 set autoindent
 set shiftwidth=4
 set tabstop=4
-" set expandtab
-set noexpandtab
+set expandtab
 set softtabstop=4
 
 "Highlight search items
@@ -117,8 +116,10 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
+Plug 'mattn/emmet-vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'mhinz/vim-signify'
@@ -244,7 +245,7 @@ let g:neomake_c_gcc_maker = {
    \}
 
 let g:neomake_c_enabled_makers = ['gcc']
-let g:neomake_python_enabled_makers = ['python']
+let g:neomake_python_enabled_makers = ['python', 'flake8']
 
 let g:neomake_warning_sign = {
    \ 'text': '⚠',
