@@ -67,11 +67,13 @@ alias g++="g++ -Wall -pedantic"
 alias pvsim="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/PVSim/PVSim.exe"
 alias vi="nvim"
 alias makeandroid="./gradlew assembleDebug && adb install -r app/build/outputs/apk/app-debug.apk"
+alias androidemu="/opt/android-sdk/emulator/emulator -avd intel -use-system-libs"
 alias gcap="git commit -a && git push"
 alias upass="sudo umount /media/KINGSTON"
 alias modelsim="/opt/altera/16.0/modelsim_ase/bin/vsim"
 alias gl="git log --format=\"%C(auto)%h %d %Creset%s%n%Cgreen%ar %C(magenta)%an\" --graph --all"
 alias buspirate="picocom -b 115200 /dev/buspirate"
+alias gitserver="git daemon --base-path=/home/carl/Programming --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose"
 
 #export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/carl/.gem/ruby/2.4.0/bin
 for n in {1..9}; do

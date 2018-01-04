@@ -62,7 +62,7 @@ set list lcs=tab:»·,eol:¬
 set autoindent
 set shiftwidth=4
 set tabstop=4
-" set expandtab
+set expandtab
 set noexpandtab
 set softtabstop=4
 
@@ -107,10 +107,10 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'
 Plug 'Valloric/ListToggle'
 Plug 'jaxbot/github-Issues.vim', {'on': ['Gissues', 'Giadd']}
-" Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 " Plug 'tpope/vim-vinegar'
 Plug 'benekastah/neomake',
-Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'edkolev/tmuxline.vim'
@@ -318,6 +318,8 @@ nnoremap cp ct,
 
 "Bind for fzf
 nnoremap <C-p> :Files<CR>
+
+nnoremap <leader>t :NERDTreeToggle<cr>
 
 "Move to begining and end of line
 nnoremap H ^

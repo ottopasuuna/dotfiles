@@ -15,6 +15,7 @@ redshift &
 xscreensaver &
 owncloud &
 mpd &
+nm-applet &
 export DISPLAY=:0.0
 xrandr --output HDMI-0 --off
 xrandr --output HDMI-0 --auto --right-of DP-1
