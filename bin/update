@@ -8,7 +8,7 @@ echo 'cleaning cache of uninstalled packages'
 paccache -ruk0
 echo 'Updating packages'
 sudo aura -Syu
-sudo aura -Ayu
+sudo aura -Ayux
 echo 'Optimizing database'
 sudo pacman-optimize
 
