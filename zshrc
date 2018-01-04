@@ -81,7 +81,8 @@ for n in {1..9}; do
 done
 
 #Variables
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.3.0/bin:/home/carl/.gem/ruby/2.4.0/bin:$PATH:
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.3.0/bin:/home/carl/.gem/ruby/2.4.0/bin:$PATH
+export PATH=$HOME/miniconda3/bin:$PATH
 export LFS=/mnt/lfs
 # export STEAM_RUNTIME=0
 export EDITOR="nvim"
@@ -121,6 +122,10 @@ function vga-start() {
 
 function vga-stop() {
     xrandr --output VGA-1 --off
+}
+
+function average() {
+    awk '{sum+=$1} END {print sum/NR}' $1
 }
 
 

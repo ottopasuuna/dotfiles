@@ -63,7 +63,6 @@ set autoindent
 set shiftwidth=4
 set tabstop=4
 set expandtab
-set noexpandtab
 set softtabstop=4
 
 "Highlight search items
@@ -81,6 +80,8 @@ set foldmethod=marker
 "slimv configuration
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+
+let g:python3_host_prog = '/home/carl/miniconda3/envs/neovim3/bin/python'
 
 "}}}
 
@@ -117,8 +118,10 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
+Plug 'mattn/emmet-vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'mhinz/vim-signify'
@@ -244,7 +247,7 @@ let g:neomake_c_gcc_maker = {
    \}
 
 let g:neomake_c_enabled_makers = ['gcc']
-let g:neomake_python_enabled_makers = ['python']
+let g:neomake_python_enabled_makers = ['python', 'flake8']
 
 let g:neomake_warning_sign = {
    \ 'text': '⚠',
