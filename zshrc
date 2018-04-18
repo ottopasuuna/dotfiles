@@ -61,10 +61,10 @@ alias tw="vim +TW"
 alias yt="youtube-viewer -C"
 alias suspend="systemctl suspend"
 alias music="ncmpcpp"
+alias ytmusic="mpsyt"
 alias vimrc="nvim ~/.vimrc"
 alias zshrc="nvim ~/.zshrc"
 alias g++="g++ -Wall -pedantic"
-alias pvsim="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/PVSim/PVSim.exe"
 alias vi="nvim"
 alias makeandroid="./gradlew assembleDebug && adb install -r app/build/outputs/apk/app-debug.apk"
 alias gcap="git commit -a && git push"
@@ -102,7 +102,7 @@ function search() {
 }
 
 function install() {
-    sudo aura -S $@ || sudo aura -Aa --hotedit $@
+    sudo aura -S $@ || sudo aura -Axa --hotedit $@
 }
 
 

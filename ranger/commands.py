@@ -77,6 +77,7 @@
 # ===================================================================
 
 import os
+import re
 from ranger.core.loader import CommandLoader
 from ranger.api.commands import *
 
