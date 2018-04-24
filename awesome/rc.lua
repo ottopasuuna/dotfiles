@@ -53,7 +53,7 @@ terminal_cmd = terminal
 editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
 -- inetbrowser = "firefox"
-inetbrowser = "qutebrowser"
+inetbrowser = "firefox"
 emailclient = "thunderbird"
 filemanager = terminal .. " -e ranger"
 
@@ -371,6 +371,8 @@ globalkeys = awful.util.table.join(
 	 keydoc.group("Layout manipulation"),
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end, "Swap client forward"),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end, "Swap client backward"),
+    awful.key({ modkey, "Shift", "Control"   }, "j", function () awful.client.movetoscreen()    end, "Move client next screen"),
+    awful.key({ modkey, "Shift", "Control"   }, "k", function () awful.client.movetoscreen()    end, "Move client next screen"),
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end, "Swap screen forward"),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end, "Swap screen backward"),
     -- awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
