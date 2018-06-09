@@ -72,6 +72,7 @@ alias upass="sudo umount /media/KINGSTON"
 alias modelsim="/opt/altera/16.0/modelsim_ase/bin/vsim"
 alias gl="git log --format=\"%C(auto)%h %d %Creset%s%n%Cgreen%ar %C(magenta)%an\" --graph --all"
 alias buspirate="picocom -b 115200 /dev/buspirate"
+alias arch2="sudo systemd-nspawn -b -D ~/vm/arch2 "
 
 #export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/carl/.gem/ruby/2.4.0/bin
 for n in {1..9}; do
