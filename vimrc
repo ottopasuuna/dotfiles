@@ -108,7 +108,7 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'
 Plug 'Valloric/ListToggle'
 Plug 'jaxbot/github-Issues.vim', {'on': ['Gissues', 'Giadd']}
-" Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 " Plug 'tpope/vim-vinegar'
 Plug 'benekastah/neomake',
 Plug 'majutsushi/tagbar'
@@ -127,6 +127,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'mhinz/vim-signify'
 Plug 'bling/vim-bufferline'
 Plug 'vimwiki/vimwiki'
+Plug 'godlygeek/tabular'
 " Plug 'tbabej/taskwiki'
 Plug 'blindFS/vim-taskwarrior'
 Plug 'powerman/vim-plugin-AnsiEsc'
@@ -335,6 +336,7 @@ nnoremap <leader>ev :tabe $MYVIMRC<cr>
 
 nnoremap <F1> :e.<cr>
 nnoremap <F2> :UndotreeToggle<cr>
+nnoremap <F3> :NERDTreeToggle<cr>
 nnoremap <F5> :Neomake!<CR>
 nnoremap <F8> :TagbarToggle<cr>
 
@@ -359,6 +361,11 @@ nnoremap <leader>sp :set spell!<CR>
 :nnoremap <leader>w :ToggleWhitespace<cr>
 :nnoremap <leader>sw :StripWhitespace<cr>
 let g:better_whitespace_filetypes_blacklist=['txt']
+
+" Tabularize mappings
+:nnoremap <leader>t :Tab /
+:vnoremap <leader>t :Tab /
+
 
 "Search for visually selected text
 vnoremap // y/<C-R>"<CR>

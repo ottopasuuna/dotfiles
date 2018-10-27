@@ -49,10 +49,9 @@ beautiful.init(awful.util.getdir("config") .. "/themes/ottopasuuna/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "termite"
-terminal_cmd = terminal
+terminal_cmd = terminal .. " -e /home/carl/bin/zsh_tmux.sh"
 editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
--- inetbrowser = "firefox"
 inetbrowser = "firefox"
 emailclient = "thunderbird"
 filemanager = terminal .. " -e ranger"

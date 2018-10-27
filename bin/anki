@@ -1,3 +1,3 @@
 #!/bin/bash
 source activate anki
-~/Programming/Python/anki/runanki
+~/Programming/Python/anki-upsteam/runanki
