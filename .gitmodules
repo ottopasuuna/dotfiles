@@ -1,6 +1,6 @@
-[submodule "zsh-theme/zsh-git-prompt"]
-	path = zsh-theme/zsh-git-prompt
-	url = git@github.com:olivierverdier/zsh-git-prompt.git
 [submodule "dot-vim"]
 	path = dot-vim
 	url = git@github.com:ottopasuuna/dot-vim.git
+[submodule "dot-zsh"]
+	path = dot-zsh
+	url = git@github.com:ottopasuuna/dot-zsh.git
