@@ -14,7 +14,7 @@ redshift &
 # compton &
 xscreensaver &
 owncloud &
-mpd &
+# mpd &
 export DISPLAY=:0.0
 xrandr --output HDMI-0 --off
 xrandr --output HDMI-0 --auto --right-of DP-1

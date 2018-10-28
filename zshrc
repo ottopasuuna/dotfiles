@@ -80,7 +80,7 @@ for n in {1..9}; do
 done
 
 #Variables
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.3.0/bin:/home/carl/.gem/ruby/2.4.0/bin:$PATH
+export PATH=$HOME/.ellipsis/bin:$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.3.0/bin:/home/carl/.gem/ruby/2.4.0/bin:$PATH
 export PATH=$HOME/miniconda3/bin:$PATH
 export LFS=/mnt/lfs
 # export STEAM_RUNTIME=0
@@ -125,6 +125,14 @@ function vga-stop() {
 
 function average() {
     awk '{sum+=$1} END {print sum/NR}' $1
+}
+
+function gshell() {
+    if [[ $# -eq 1 ]] then
+        machinectl shell $USER@games /usr/bin/$1
+    else
+        machinectl shell $USER@games
+    fi
 }
 
 
