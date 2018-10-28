@@ -10,3 +10,5 @@ sudo paccache -ruk0
 sudo paccache -rk2
 echo 'Updating packages'
 sudo pikaur -Syu
+echo 'Updating vim plugins'
+vim '+PlugUpdate' '+qa'
