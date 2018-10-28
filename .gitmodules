@@ -10,3 +10,6 @@
 [submodule "dot-misc"]
 	path = dot-misc
 	url = git@github.com:ottopasuuna/dot-misc.git
+[submodule "dot-awesome"]
+	path = dot-awesome
+	url = git@github.com:ottopasuuna/dot-awesome.git
