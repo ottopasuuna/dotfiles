@@ -4,3 +4,6 @@
 [submodule "dot-zsh"]
 	path = dot-zsh
 	url = git@github.com:ottopasuuna/dot-zsh.git
+[submodule "dot-xorg"]
+	path = dot-xorg
+	url = git@github.com:ottopasuuna/dot-xorg.git
