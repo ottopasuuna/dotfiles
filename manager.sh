@@ -31,7 +31,7 @@ function install_module() {
     mod_name=`echo $name | cut -d '/' -f 2`
     cd $mod_name
     echo "_____ $mod_name _____"
-    make link
+    ../../pkg.sh install
     cd ..
 }
 
@@ -41,7 +41,7 @@ function uninstall_module() {
     mod_name=`echo $name | cut -d '/' -f 2`
     cd $mod_name
     echo "_____ $mod_name _____"
-    make unlink
+    ../../pkg.sh uninstall
     cd ..
 }
 
@@ -51,7 +51,7 @@ function update_module() {
     mod_name=`echo $name | cut -d '/' -f 2`
     cd $mod_name
     echo "_____ $mod_name _____"
-    git pull
+    ../../pkg.sh update
     cd ..
 }
 

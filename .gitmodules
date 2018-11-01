@@ -1,15 +1,3 @@
-[submodule "dot-vim"]
-	path = dot-vim
-	url = git@github.com:ottopasuuna/dot-vim.git
-[submodule "dot-zsh"]
-	path = dot-zsh
-	url = git@github.com:ottopasuuna/dot-zsh.git
-[submodule "dot-xorg"]
-	path = dot-xorg
-	url = git@github.com:ottopasuuna/dot-xorg.git
-[submodule "dot-misc"]
-	path = dot-misc
-	url = git@github.com:ottopasuuna/dot-misc.git
 [submodule "dot-awesome"]
 	path = dot-awesome
 	url = git@github.com:ottopasuuna/dot-awesome.git
