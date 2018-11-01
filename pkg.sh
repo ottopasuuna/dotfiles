@@ -22,6 +22,12 @@ function info_pkg() {
 }
 
 function install_pkg() {
+    for dir in "${ensure_dirs[@]}"; do
+        if [[ ! -d $dir ]]; then
+            echo "Creating $dir"
+            mkdir -p $dir
+        fi
+    done
     for src in "${!link_map[@]}"; do
         dest="${link_map[$src]}"
         src="$PWD/$src"
