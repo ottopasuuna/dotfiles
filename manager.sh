@@ -143,6 +143,23 @@ function list_modules() {
     fi
 }
 
+function show_modules_info() {
+    if [[ ! -d $MODULES_DIR ]]; then
+        echo "No modules present"
+        exit 1
+    fi
+    cd $MODULES_DIR
+    echo "Currently installed modules:"
+    for module in `ls`; do
+        cd $module
+        echo "_____ $module _____"
+        ../../pkg.sh info
+        ../../pkg.sh show-links
+        cd ..
+    done
+    cd ..
+}
+
 
 ############ Main entry ############
 
@@ -157,7 +174,7 @@ fi
 
 case $subcommand in
     'info')
-        list_modules ;;
+        show_modules_info ;;
     'install')
         install_modules $cmd_args;;
     'update')

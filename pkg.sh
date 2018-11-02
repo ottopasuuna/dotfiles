@@ -17,8 +17,18 @@ function call_if_defined() {
     fi
 }
 
+function print_link_map() {
+    echo "Link Map: {"
+    for src in "${!link_map[@]}"; do
+        dest="${link_map[$src]}"
+        src="$PWD/$src"
+        echo "  $src -> $dest"
+    done
+    echo "}"
+}
+
 function info_pkg() {
-    echo $description
+    echo "Description: $description"
 }
 
 function install_pkg() {
@@ -75,6 +85,8 @@ case $subcommand in
         update_pkg ;;
     'uninstall')
         uninstall_pkg ;;
+    'show-links')
+        print_link_map ;;
     *)
         echo "Invalid command" ;;
 esac
