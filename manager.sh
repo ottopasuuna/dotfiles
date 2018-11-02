@@ -55,6 +55,18 @@ function update_module() {
     cd ..
 }
 
+function run_git_cmd() {
+    name=$1
+    args=$@
+    git_args=("${args[@]:1}")
+    url=`echo git@github.com:$name.git`
+    mod_name=`echo $name | cut -d '/' -f 2`
+    cd $mod_name
+    echo "_____ $mod_name _____"
+    git $git_args
+    cd ..
+}
+
 ############ Multi module operations ##########
 
 function install_modules() {
@@ -105,6 +117,20 @@ function uninstall_modules() {
 
 }
 
+function recursive_git() {
+    if [[ ! -d $MODULES_DIR ]]; then
+        echo "No modules present"
+        exit 1
+    fi
+    module_names=`cat $MODULES_LIST`
+    cd $MODULES_DIR
+    for name in $module_names; do
+        run_git_cmd $name $@
+    done
+    cd ..
+
+}
+
 function list_modules() {
     if [[ ! -d $MODULES_DIR ]]; then
         echo "No modules present"
@@ -138,6 +164,8 @@ case $subcommand in
         update_modules ;;
     'uninstall')
         uninstall_modules $cmd_args ;;
+    'git')
+        recursive_git $cmd_args ;;
     *)
         echo "Invalid command" ;;
 esac
