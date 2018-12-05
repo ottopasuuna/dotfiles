@@ -1,9 +1,9 @@
 #!/bin/bash
 
 ########### Constants ###########
-MODULES_LIST='modules.cfg'
+MODULES_LIST='modconfig.sh'
 MODULES_DIR='modules'
-
+source $MODULES_LIST
 
 ########## Utility functions #############
 function ensure_modules_exists() {
@@ -12,57 +12,62 @@ function ensure_modules_exists() {
     fi
 }
 
+function url_to_name() {
+    url=$1
+    if echo $url | grep -q 'git@.*\.git' - ; then
+        name=`echo $url | cut -d '/' -f 2 | sed 's/.git//'`
+        echo $name
+    else
+        echo $url
+    fi
+}
+
 
 ############ Single module operations ##########
 
 function download_module() {
-    name=$1
-    url=`echo git@github.com:$name.git`
-    mod_name=`echo $name | cut -d '/' -f 2`
-    if [[ ! -d $mod_name ]]; then
-        echo "_____ $mod_name _____"
+    url=$1
+    name=`url_to_name $url`
+    if [[ ! -d $name ]]; then
+        echo "_____ $name _____"
         git clone --recursive $url
     fi
 }
 
 function install_module() {
-    name=$1
-    url=`echo git@github.com:$name.git`
-    mod_name=`echo $name | cut -d '/' -f 2`
-    cd $mod_name
-    echo "_____ $mod_name _____"
+    url=$1
+    name=`url_to_name $url`
+    cd $name
+    echo "_____ $name _____"
     ../../pkg.sh install
     cd ..
 }
 
 function uninstall_module() {
-    name=$1
-    url=`echo git@github.com:$name.git`
-    mod_name=`echo $name | cut -d '/' -f 2`
-    cd $mod_name
-    echo "_____ $mod_name _____"
+    url=$1
+    name=`url_to_name $url`
+    cd $name
+    echo "_____ $name _____"
     ../../pkg.sh uninstall
     cd ..
 }
 
 function update_module() {
-    name=$1
-    url=`echo git@github.com:$name.git`
-    mod_name=`echo $name | cut -d '/' -f 2`
-    cd $mod_name
-    echo "_____ $mod_name _____"
+    url=$1
+    name=`url_to_name $url`
+    cd $name
+    echo "_____ $name _____"
     ../../pkg.sh update
     cd ..
 }
 
 function run_git_cmd() {
-    name=$1
+    url=$1
+    name=`url_to_name $url`
     args=$@
     git_args=("${args[@]:1}")
-    url=`echo git@github.com:$name.git`
-    mod_name=`echo $name | cut -d '/' -f 2`
-    cd $mod_name
-    echo "_____ $mod_name _____"
+    cd $name
+    echo "_____ $name _____"
     git $git_args
     cd ..
 }
@@ -75,7 +80,7 @@ function install_modules() {
         exit 1
     fi
     if [[ $# -eq 0 ]]; then
-        module_names=`cat $MODULES_LIST`
+        module_names=${enabled_modules[@]}
     else
         module_names=$@
     fi
@@ -91,7 +96,7 @@ function install_modules() {
 
 function update_modules() {
     ensure_modules_exists
-    module_names=`cat $MODULES_LIST`
+    module_names=${enabled_modules[@]}
     cd $MODULES_DIR
     for name in $module_names; do
         update_module $name
@@ -105,7 +110,7 @@ function uninstall_modules() {
         exit 1
     fi
     if [[ $# -eq 0 ]]; then
-        module_names=`cat $MODULES_LIST`
+        module_names=${enabled_modules[@]}
     else
         module_names=$@
     fi
@@ -122,7 +127,7 @@ function recursive_git() {
         echo "No modules present"
         exit 1
     fi
-    module_names=`cat $MODULES_LIST`
+    module_names=${enabled_modules[@]}
     cd $MODULES_DIR
     for name in $module_names; do
         run_git_cmd $name $@
