@@ -44,6 +44,8 @@ function install_pkg() {
         if [[ ! -e $dest ]]; then
             echo "$src -> $dest"
             ln -s $src $dest
+        else
+            echo "$dest already exists, skipping"
         fi
     done
     call_if_defined __install__
