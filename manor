@@ -1,7 +1,9 @@
 #!/bin/bash
 
 ########### Constants ###########
-MANOR_LOCATION=$(dirname $(readlink -f $0))
+if [[ -z $MANOR_INSTALL_LOCATION ]]; then
+    MANOR_INSTALL_LOCATION=$(dirname $(readlink -f $0))
+fi
 if [[ -z $MODULES_LIST ]]; then
     MODULES_LIST='enabled_modules'
 fi
@@ -62,7 +64,7 @@ function install_module() {
     name=$1
     cd $(name_to_dir $name)
     echo "_____ $name _____"
-    $MANOR_LOCATION/pkg.sh install
+    $MANOR_INSTALL_LOCATION/pkg.sh install
     cd ..
 }
 
@@ -70,7 +72,7 @@ function uninstall_module() {
     name=$1
     cd $(name_to_dir $name)
     echo "_____ $name _____"
-    $MANOR_LOCATION/pkg.sh uninstall
+    $MANOR_INSTALL_LOCATION/pkg.sh uninstall
     cd ..
 }
 
@@ -78,7 +80,7 @@ function update_module() {
     name=$1
     cd $(name_to_dir $name)
     echo "_____ $name _____"
-    $MANOR_LOCATION/pkg.sh update
+    $MANOR_INSTALL_LOCATION/pkg.sh update
     cd ..
 }
 
@@ -111,7 +113,7 @@ function install_modules() {
 
 
 function update_modules() {
-    ensure_modules_exists
+    ensure_modules_dir_exists
     module_names=$(read_modules_list)
     cd $MODULES_DIR
     for name in $module_names; do
@@ -175,8 +177,8 @@ function show_modules_info() {
     for module in `ls`; do
         cd $module
         echo "_____ $module _____"
-        $MANOR_LOCATION/pkg.sh info
-        $MANOR_LOCATION/pkg.sh show-links
+        $MANOR_INSTALL_LOCATION/pkg.sh info
+        $MANOR_INSTALL_LOCATION/pkg.sh show-links
         cd ..
     done
     cd ..
